@@ -1,17 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Models</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterConsoles()"
+    placeholder="Search consoles...">
+  </ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item
+      *ngFor="let console of filteredConsoles"
+      [routerLink]="['/tabs/tab2', console.id]"
+      detail="true"
+      button>
+      <ion-label>
+        <h2>{{ console.name }}</h2>
+        <p>Released: {{ console.releaseDate }}</p>
+        <p>{{ console.price }}</p>
+      </ion-label>
+      <ion-badge slot="end" [color]="console.platform === 'ds' ? 'warning' : 'primary'">
+        {{ console.platform === 'ds' ? 'DS' : '3DS' }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -1,17 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>DS Encyclopedia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="hero">
+    <h1>Welcome to DS Encyclopedia</h1>
+    <p>Your complete guide to every Nintendo DS & 3DS console ever made.</p>
+  </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>The DS Family</ion-card-title>
+      <ion-card-subtitle>2004 — 2017</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      From the original Nintendo DS in 2004 to the New 2DS XL in 2017, Nintendo's dual-screen handheld family spanned 13 years and over 230 million units sold worldwide.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>10 Consoles</ion-card-title>
+      <ion-card-subtitle>One Complete Story</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Browse every model — specs, history, fun facts, and top games for each console.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Compare Models</ion-card-title>
+      <ion-card-subtitle>Side by Side</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Pick any two consoles and compare their specs side by side.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
