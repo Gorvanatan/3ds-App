@@ -13,6 +13,8 @@
     "launchGame": "Super Mario 64 DS",
     "unitsSold": "154.02 million (DS family total)",
     "platform": "ds",
+    "themeColor": "#a8a8a8",
+    "themeContrast": "#000000",
     "funFacts": [
       "Second best-selling game console of all time",
       "First Nintendo handheld with dual screens",
@@ -36,6 +38,8 @@
     "launchGame": "New Super Mario Bros.",
     "unitsSold": "Part of 154.02 million total",
     "platform": "ds",
+    "themeColor": "#ffffff",
+    "themeContrast": "#cc0000",
     "funFacts": [
       "40% smaller and 33% lighter than the original DS",
       "Brighter screens with four brightness levels",
@@ -59,6 +63,8 @@
     "launchGame": "DS titles + DSiWare at launch",
     "unitsSold": "Part of 154.02 million total",
     "platform": "ds",
+    "themeColor": "#1a1a1a",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "First DS model with cameras — front and rear 0.3MP",
       "Introduced the DSi Shop for downloadable DSiWare games",
@@ -82,6 +88,8 @@
     "launchGame": "Brain Age: Arts & Letters (pre-installed)",
     "unitsSold": "Part of 154.02 million total",
     "platform": "ds",
+    "themeColor": "#8B6914",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "Screens were 93% larger than the original DS",
       "Came with two styluses — a standard and a pen-style",
@@ -105,6 +113,8 @@
     "launchGame": "Super Street Fighter IV: 3D Edition",
     "unitsSold": "75.94 million (3DS family total)",
     "platform": "3ds",
+    "themeColor": "#00aacc",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "First mainstream handheld with glasses-free 3D display",
       "Featured a built-in pedometer that earned in-game coins",
@@ -128,6 +138,8 @@
     "launchGame": "New Super Mario Bros. 2",
     "unitsSold": "Part of 75.94 million total",
     "platform": "3ds",
+    "themeColor": "#cc0000",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "Screens were 90% larger than the original 3DS",
       "Did not include an AC adapter in some regions to reduce cost",
@@ -151,6 +163,8 @@
     "launchGame": "Pokémon X and Y",
     "unitsSold": "Part of 75.94 million total",
     "platform": "3ds",
+    "themeColor": "#cc0000",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "Launched the same day as Pokémon X and Y",
       "Flat slate design — cannot fold like other models",
@@ -174,6 +188,8 @@
     "launchGame": "The Legend of Zelda: Majora's Mask 3D",
     "unitsSold": "Part of 75.94 million total",
     "platform": "3ds",
+    "themeColor": "#1a1a1a",
+    "themeContrast": "#ffffff",
     "funFacts": [
       "Introduced a C-Stick nub for camera control",
       "Added ZL and ZR shoulder buttons",
@@ -197,6 +213,8 @@
     "launchGame": "Xenoblade Chronicles 3D",
     "unitsSold": "Part of 75.94 million total",
     "platform": "3ds",
+    "themeColor": "#1a1a1a",
+    "themeContrast": "#ff0000",
     "funFacts": [
       "Xenoblade Chronicles 3D was a New 3DS exclusive at launch",
       "Most popular model in many regions",
@@ -220,6 +238,8 @@
     "launchGame": "Hey! Pikmin",
     "unitsSold": "Part of 75.94 million total",
     "platform": "3ds",
+    "themeColor": "#000000",
+    "themeContrast": "#00c8b4",
     "funFacts": [
       "Last model ever released in the DS/3DS family",
       "Brought the clamshell design back to the 2DS line",

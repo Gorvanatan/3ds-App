@@ -1,6 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
+<ion-toolbar [style.--background]="console?.themeColor" [style.--color]="console?.themeContrast">    <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ console?.name }}</ion-title>
@@ -114,20 +113,21 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Popular Games</ion-card-title>
-      <ion-card-subtitle>{{ console.platform === 'ds' ? 'Nintendo DS' : 'Nintendo 3DS' }}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let game of games">
-          <ion-label>
-            <h2>{{ game.name }}</h2>
-            <p>{{ game.rating > 0 ? 'Rating: ' + game.rating : 'No rating yet' }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+  <ion-card-header>
+    <ion-card-title>Popular Games</ion-card-title>
+    <ion-card-subtitle>{{ console.platform === 'ds' ? 'Nintendo DS' : 'Nintendo 3DS' }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let game of games">
+        <img slot="start" [src]="game.background_image" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; margin-right: 10px;" />
+        <ion-label>
+          <h2>{{ game.name }}</h2>
+          <p>{{ game.rating > 0 ? 'Rating: ' + game.rating : 'No rating yet' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 
 </ion-content>

@@ -35,7 +35,10 @@ export class ModelDetailPage implements OnInit {
       this.console = data.find(c => c.id === id);
       if (this.console) {
        this.consoleDataService.getGamesForPlatform(this.console.platform).subscribe(response => {
-  this.games = response.results;
+  const platformId = this.console.platform === 'ds' ? 9 : 8;
+  this.games = response.results.filter((game: any) =>
+    game.platforms.some((p: any) => p.platform.id === platformId)
+  );
 });
         const favs = await this.storage.get('favourites') || [];
         this.isFavourite = favs.some((f: any) => f.id === this.console.id);
