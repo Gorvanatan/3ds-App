@@ -17,9 +17,19 @@ export const routes: Routes = [
           import('../tab2/tab2.page').then((m) => m.Tab2Page),
       },
       {
+        path: 'tab2/:id',
+        loadComponent: () =>
+          import('../pages/model-detail/model-detail.page').then((m) => m.ModelDetailPage),
+      },
+      {
         path: 'tab3',
         loadComponent: () =>
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
+      },
+      {
+        path: 'compare',
+        loadComponent: () =>
+          import('../pages/compare/compare.page').then((m) => m.ComparePage),
       },
       {
         path: '',

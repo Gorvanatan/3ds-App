@@ -1,0 +1,18 @@
+.header-row {
+  background: var(--ion-color-light);
+  padding: 10px 0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.spec-row {
+  border-bottom: 1px solid var(--ion-color-light);
+  padding: 8px 0;
+  align-items: center;
+}
+
+.spec-label {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--ion-color-medium);
+}

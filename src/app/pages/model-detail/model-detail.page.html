@@ -1,13 +1,133 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>model-detail</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ console?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="shareConsole()">
+        <ion-icon name="share-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toggleFavourite()">
+        <ion-icon [name]="isFavourite ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">model-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" *ngIf="console">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ console.name }}</ion-card-title>
+      <ion-card-subtitle>{{ console.releaseDate }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-badge [color]="console.platform === 'ds' ? 'warning' : 'primary'">
+        {{ console.platform === 'ds' ? 'DS' : '3DS' }}
+      </ion-badge>
+      <p style="margin-top: 10px;">{{ console.history }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Specs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h3>Price at Launch</h3>
+            <p>{{ console.price }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>CPU</h3>
+            <p>{{ console.cpu }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>RAM</h3>
+            <p>{{ console.ram }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Screen Size</h3>
+            <p>{{ console.screenSize }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Battery Life</h3>
+            <p>{{ console.battery }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Colours</h3>
+            <p>{{ console.colour }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Launch Game</h3>
+            <p>{{ console.launchGame }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Units Sold</h3>
+            <p>{{ console.unitsSold }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Predecessor</h3>
+            <p>{{ console.predecessor }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <h3>Improvements over Predecessor</h3>
+            <p>{{ console.improvements }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Fun Facts</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let fact of console.funFacts">
+          <ion-label class="ion-text-wrap">• {{ fact }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Popular Games</ion-card-title>
+      <ion-card-subtitle>{{ console.platform === 'ds' ? 'Nintendo DS' : 'Nintendo 3DS' }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let game of games">
+          <ion-label>
+            <h2>{{ game.name }}</h2>
+            <p>{{ game.rating > 0 ? 'Rating: ' + game.rating : 'No rating yet' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

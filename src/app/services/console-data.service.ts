@@ -19,6 +19,6 @@ export class ConsoleDataService {
 
   getGamesForPlatform(platform: string): Observable<any> {
     const platformId = platform === 'ds' ? 9 : 8;
-    return this.http.get(`${this.rawgBaseUrl}/games?key=${this.rawgApiKey}&platforms=${platformId}&ordering=-rating&page_size=10`);
+    return this.http.get(`${this.rawgBaseUrl}/games?key=${this.rawgApiKey}&platforms=${platformId}&ordering=-metacritic&page_size=10&metacritic=70,100`);
   }
 }

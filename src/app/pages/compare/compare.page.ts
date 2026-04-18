@@ -1,20 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonBadge } from '@ionic/angular/standalone';
+import { ConsoleDataService } from '../../services/console-data.service';
 
 @Component({
   selector: 'app-compare',
   templateUrl: './compare.page.html',
   styleUrls: ['./compare.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [NgFor, NgIf, FormsModule, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonBadge],
 })
 export class ComparePage implements OnInit {
 
-  constructor() { }
+  consoles: any[] = [];
+  selectedId1: number | null = null;
+  selectedId2: number | null = null;
+  console1: any = null;
+  console2: any = null;
+
+  specs = [
+    { label: 'Release Date', key: 'releaseDate' },
+    { label: 'Price', key: 'price' },
+    { label: 'CPU', key: 'cpu' },
+    { label: 'RAM', key: 'ram' },
+    { label: 'Screen Size', key: 'screenSize' },
+    { label: 'Battery Life', key: 'battery' },
+    { label: 'Colours', key: 'colour' },
+    { label: 'Launch Game', key: 'launchGame' },
+    { label: 'Predecessor', key: 'predecessor' },
+    { label: 'Units Sold', key: 'unitsSold' },
+  ];
+
+  constructor(private consoleDataService: ConsoleDataService) {}
 
   ngOnInit() {
+    this.consoleDataService.getAllConsoles().subscribe(data => {
+      this.consoles = data;
+    });
   }
 
+  onSelectChange() {
+    this.console1 = this.consoles.find(c => c.id === Number(this.selectedId1)) || null;
+    this.console2 = this.consoles.find(c => c.id === Number(this.selectedId2)) || null;
+  }
 }

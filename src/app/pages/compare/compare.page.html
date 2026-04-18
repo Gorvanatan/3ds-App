@@ -1,13 +1,67 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>compare</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Compare</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">compare</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select Two Consoles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Console 1</ion-label>
+        <ion-select [(ngModel)]="selectedId1" (ionChange)="onSelectChange()" placeholder="Select...">
+          <ion-select-option *ngFor="let c of consoles" [value]="c.id">{{ c.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Console 2</ion-label>
+        <ion-select [(ngModel)]="selectedId2" (ionChange)="onSelectChange()" placeholder="Select...">
+          <ion-select-option *ngFor="let c of consoles" [value]="c.id">{{ c.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="console1 && console2">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Comparison</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-grid>
+          <ion-row class="header-row">
+            <ion-col size="4"></ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <strong>{{ console1.name }}</strong>
+              <br>
+              <ion-badge [color]="console1.platform === 'ds' ? 'warning' : 'primary'">
+                {{ console1.platform === 'ds' ? 'DS' : '3DS' }}
+              </ion-badge>
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <strong>{{ console2.name }}</strong>
+              <br>
+              <ion-badge [color]="console2.platform === 'ds' ? 'warning' : 'primary'">
+                {{ console2.platform === 'ds' ? 'DS' : '3DS' }}
+              </ion-badge>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngFor="let spec of specs" class="spec-row">
+            <ion-col size="4" class="spec-label">{{ spec.label }}</ion-col>
+            <ion-col size="4" class="ion-text-center">{{ console1[spec.key] }}</ion-col>
+            <ion-col size="4" class="ion-text-center">{{ console2[spec.key] }}</ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>
