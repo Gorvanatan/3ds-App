@@ -2,21 +2,24 @@
   <ion-toolbar color="primary">
     <ion-title>Models</ion-title>
   </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterConsoles()"
+      placeholder="Search consoles..."
+      animated>
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar
-    [(ngModel)]="searchTerm"
-    (ionInput)="filterConsoles()"
-    placeholder="Search consoles...">
-  </ion-searchbar>
-
   <ion-list>
     <ion-item
       *ngFor="let console of filteredConsoles"
       [routerLink]="['/tabs/tab2', console.id]"
       detail="true"
       button>
+      <img slot="start" [src]="console.image" style="width: 60px; height: 60px; object-fit: contain; margin-right: 10px;" />
       <ion-label>
         <h2>{{ console.name }}</h2>
         <p>Released: {{ console.releaseDate }}</p>

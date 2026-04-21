@@ -21,4 +21,10 @@ export class ConsoleDataService {
     const platformId = platform === 'ds' ? 9 : 8;
     return this.http.get(`${this.rawgBaseUrl}/games?key=${this.rawgApiKey}&platforms=${platformId}&ordering=-metacritic&page_size=10&metacritic=70,100`);
   }
+
+  getConsoleImage(wikiTitle: string): Observable<any> {
+  const query = encodeURIComponent(wikiTitle);
+  return this.http.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${query}`);
+}
+
 }

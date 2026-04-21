@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Nintendo DS",
+    "wikiTitle": "Nintendo DS",
     "releaseDate": "November 21, 2004",
     "price": "$149.99",
     "colour": "Platinum Silver / Graphite Black",
@@ -15,6 +16,7 @@
     "platform": "ds",
     "themeColor": "#a8a8a8",
     "themeContrast": "#000000",
+    "image": "assets/images/Nintendo_DS_-_Original_Grey_Model.jpg",
     "funFacts": [
       "Second best-selling game console of all time",
       "First Nintendo handheld with dual screens",
@@ -27,6 +29,7 @@
   {
     "id": 2,
     "name": "Nintendo DS Lite",
+    "wikiTitle": "Nintendo DS Lite",
     "releaseDate": "March 2, 2006",
     "price": "$129.99",
     "colour": "Polar White / Onyx Black / Crimson/Black",
@@ -40,6 +43,7 @@
     "platform": "ds",
     "themeColor": "#ffffff",
     "themeContrast": "#cc0000",
+    "image": "assets/images/r3yycsrzjxkb1.png",
     "funFacts": [
       "40% smaller and 33% lighter than the original DS",
       "Brighter screens with four brightness levels",
@@ -52,6 +56,7 @@
   {
     "id": 3,
     "name": "Nintendo DSi",
+    "wikiTitle": "Nintendo DSi",
     "releaseDate": "April 5, 2009",
     "price": "$169.99",
     "colour": "Black / White / Blue / Pink",
@@ -65,6 +70,7 @@
     "platform": "ds",
     "themeColor": "#1a1a1a",
     "themeContrast": "#ffffff",
+    "image": "assets/images/24e37ac5-391c-4f45-9743-f9ed6b1fd3bb-1_ef69a909-3e5e-422a-8746-2963e1c21328.jpg",
     "funFacts": [
       "First DS model with cameras — front and rear 0.3MP",
       "Introduced the DSi Shop for downloadable DSiWare games",
@@ -77,6 +83,7 @@
   {
     "id": 4,
     "name": "Nintendo DSi XL",
+    "wikiTitle": "Nintendo DSi XL",
     "releaseDate": "March 28, 2010",
     "price": "$189.99",
     "colour": "Bronze / Wine Red / White",
@@ -90,6 +97,7 @@
     "platform": "ds",
     "themeColor": "#8B6914",
     "themeContrast": "#ffffff",
+    "image": "assets/images/SDSCDSIXLDB003_l.jpg",
     "funFacts": [
       "Screens were 93% larger than the original DS",
       "Came with two styluses — a standard and a pen-style",
@@ -102,6 +110,7 @@
   {
     "id": 5,
     "name": "Nintendo 3DS",
+    "wikiTitle": "Nintendo 3DS",
     "releaseDate": "March 27, 2011",
     "price": "$249.99",
     "colour": "Aqua Blue / Cosmo Black",
@@ -115,6 +124,7 @@
     "platform": "3ds",
     "themeColor": "#00aacc",
     "themeContrast": "#ffffff",
+    "image": "assets/images/nintendo-3ds-1648710091.jpg",
     "funFacts": [
       "First mainstream handheld with glasses-free 3D display",
       "Featured a built-in pedometer that earned in-game coins",
@@ -127,6 +137,7 @@
   {
     "id": 6,
     "name": "Nintendo 3DS XL",
+    "wikiTitle": "Nintendo 3DS XL",
     "releaseDate": "July 28, 2012",
     "price": "$199.99",
     "colour": "Red/Black / Blue/Black / Silver/Black",
@@ -140,6 +151,7 @@
     "platform": "3ds",
     "themeColor": "#cc0000",
     "themeContrast": "#ffffff",
+    "image": "assets/images/04549650XLSBL03_l.jpg",
     "funFacts": [
       "Screens were 90% larger than the original 3DS",
       "Did not include an AC adapter in some regions to reduce cost",
@@ -152,6 +164,7 @@
   {
     "id": 7,
     "name": "Nintendo 2DS",
+    "wikiTitle": "Nintendo 2DS",
     "releaseDate": "October 12, 2013",
     "price": "$129.99",
     "colour": "Red/White / Blue/White",
@@ -165,6 +178,7 @@
     "platform": "3ds",
     "themeColor": "#cc0000",
     "themeContrast": "#ffffff",
+    "image": "assets/images/Nintendo-2DS-angle.png",
     "funFacts": [
       "Launched the same day as Pokémon X and Y",
       "Flat slate design — cannot fold like other models",
@@ -177,6 +191,7 @@
   {
     "id": 8,
     "name": "New Nintendo 3DS",
+    "wikiTitle": "New Nintendo 3DS",
     "releaseDate": "February 13, 2015",
     "price": "$199.99",
     "colour": "Black / White",
@@ -190,6 +205,7 @@
     "platform": "3ds",
     "themeColor": "#1a1a1a",
     "themeContrast": "#ffffff",
+    "image": "assets/images/New_Nintendo_3DS.png",
     "funFacts": [
       "Introduced a C-Stick nub for camera control",
       "Added ZL and ZR shoulder buttons",
@@ -202,6 +218,7 @@
   {
     "id": 9,
     "name": "New Nintendo 3DS XL",
+    "wikiTitle": "New Nintendo 3DS XL",
     "releaseDate": "February 13, 2015",
     "price": "$199.99",
     "colour": "Black / Red / Blue / Metallic Blue",
@@ -215,6 +232,7 @@
     "platform": "3ds",
     "themeColor": "#1a1a1a",
     "themeContrast": "#ff0000",
+    "image": "assets/images/04549650N3DSB03_l.jpg",
     "funFacts": [
       "Xenoblade Chronicles 3D was a New 3DS exclusive at launch",
       "Most popular model in many regions",
@@ -227,6 +245,7 @@
   {
     "id": 10,
     "name": "New Nintendo 2DS XL",
+    "wikiTitle": "New Nintendo 2DS XL",
     "releaseDate": "July 28, 2017",
     "price": "$149.99",
     "colour": "Black/Turquoise / White/Orange",
@@ -240,6 +259,7 @@
     "platform": "3ds",
     "themeColor": "#000000",
     "themeContrast": "#00c8b4",
+    "image": "assets/images/New_Nintendo_2DS_LL_(White_&_Orange).png",
     "funFacts": [
       "Last model ever released in the DS/3DS family",
       "Brought the clamshell design back to the 2DS line",

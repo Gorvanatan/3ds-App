@@ -1,0 +1,49 @@
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light);
+  font-size: 0.9rem;
+}
+
+.spec-label {
+  font-weight: bold;
+  color: var(--ion-color-medium);
+  flex: 1;
+}
+
+.fact-row {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light);
+  font-size: 0.9rem;
+}
+
+.game-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light);
+  gap: 12px;
+}
+
+.game-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.game-info {
+  flex: 1;
+
+  strong {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: var(--ion-color-medium);
+    margin: 2px 0 0 0;
+  }
+}
