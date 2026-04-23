@@ -7,6 +7,7 @@ import { heart, heartOutline, shareOutline } from 'ionicons/icons';
 import { ConsoleDataService } from '../../services/console-data.service';
 import { Storage } from '@ionic/storage-angular';
 import { Share } from '@capacitor/share';
+import { ConsoleModel, RawgGame } from '../../models/console.model';
 
 @Component({
   selector: 'app-model-detail',
@@ -17,8 +18,8 @@ import { Share } from '@capacitor/share';
 })
 export class ModelDetailPage implements OnInit {
 
-  console: any = null;
-  games: any[] = [];
+  console: ConsoleModel | null = null;
+  games: RawgGame[] = [];
   isFavourite: boolean = false;
 
   constructor(
@@ -34,25 +35,26 @@ export class ModelDetailPage implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.consoleDataService.getAllConsoles().subscribe(async data => {
-      this.console = data.find(c => c.id === id);
+      this.console = data.find(c => c.id === id) || null;
       if (this.console) {
         this.consoleDataService.getGamesForPlatform(this.console.platform).subscribe(response => {
-          const platformId = this.console.platform === 'ds' ? 9 : 8;
-          this.games = response.results.filter((game: any) =>
-            game.platforms.some((p: any) => p.platform.id === platformId)
+          const platformId = this.console!.platform === 'ds' ? 9 : 8;
+          this.games = response.results.filter(game =>
+            game.platforms.some(p => p.platform.id === platformId)
           );
         });
 
-        const favs = await this.storage.get('favourites') || [];
-        this.isFavourite = favs.some((f: any) => f.id === this.console.id);
+        const favs: ConsoleModel[] = await this.storage.get('favourites') || [];
+        this.isFavourite = favs.some(f => f.id === this.console!.id);
       }
     });
   }
 
   async toggleFavourite() {
-    let favs = await this.storage.get('favourites') || [];
+    if (!this.console) return;
+    let favs: ConsoleModel[] = await this.storage.get('favourites') || [];
     if (this.isFavourite) {
-      favs = favs.filter((f: any) => f.id !== this.console.id);
+      favs = favs.filter(f => f.id !== this.console!.id);
     } else {
       favs.push(this.console);
     }
@@ -61,6 +63,7 @@ export class ModelDetailPage implements OnInit {
   }
 
   async shareConsole() {
+    if (!this.console) return;
     await Share.share({
       title: this.console.name,
       text: `Check out the ${this.console.name} — released ${this.console.releaseDate} at ${this.console.price}. ${this.console.history}`,

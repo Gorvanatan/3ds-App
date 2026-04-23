@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonLabel, IonBadge, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/angular/standalone';
 import { ConsoleDataService } from '../services/console-data.service';
+import { ConsoleModel } from '../models/console.model';
 
 @Component({
   selector: 'app-tab2',
@@ -14,8 +15,8 @@ import { ConsoleDataService } from '../services/console-data.service';
 })
 export class Tab2Page implements OnInit {
 
-  consoles: any[] = [];
-  filteredConsoles: any[] = [];
+  consoles: ConsoleModel[] = [];
+  filteredConsoles: ConsoleModel[] = [];
   searchTerm: string = '';
 
   constructor(private consoleDataService: ConsoleDataService) {}

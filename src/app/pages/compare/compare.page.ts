@@ -3,6 +3,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonBadge } from '@ionic/angular/standalone';
 import { ConsoleDataService } from '../../services/console-data.service';
+import { ConsoleModel } from '../../models/console.model';
 
 @Component({
   selector: 'app-compare',
@@ -13,13 +14,13 @@ import { ConsoleDataService } from '../../services/console-data.service';
 })
 export class ComparePage implements OnInit {
 
-  consoles: any[] = [];
+  consoles: ConsoleModel[] = [];
   selectedId1: number | null = null;
   selectedId2: number | null = null;
-  console1: any = null;
-  console2: any = null;
+  console1: ConsoleModel | null = null;
+  console2: ConsoleModel | null = null;
 
-  specs = [
+  specs: { label: string; key: keyof ConsoleModel }[] = [
     { label: 'Release Date', key: 'releaseDate' },
     { label: 'Price', key: 'price' },
     { label: 'CPU', key: 'cpu' },

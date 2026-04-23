@@ -5,6 +5,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel
 import { addIcons } from 'ionicons';
 import { trash } from 'ionicons/icons';
 import { Storage } from '@ionic/storage-angular';
+import { ConsoleModel } from '../models/console.model';
 
 @Component({
   selector: 'app-tab3',
@@ -15,7 +16,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class Tab3Page {
 
-  favourites: any[] = [];
+  favourites: ConsoleModel[] = [];
 
   constructor(private storage: Storage) {
     addIcons({ trash });

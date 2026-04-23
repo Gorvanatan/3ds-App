@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { ConsoleModel, RawgResponse, Platform } from '../models/console.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConsoleDataService {
 
-  private jsonUrl = 'assets/3ds-models.json';
-  private rawgApiKey = 'b08169b7f25e483b865115db131145ac';
-  private rawgBaseUrl = 'https://api.rawg.io/api';
+  private readonly DS_PLATFORM_ID = 9;
+  private readonly THREEDS_PLATFORM_ID = 8;
 
   constructor(private http: HttpClient) {}
 
-  getAllConsoles(): Observable<any[]> {
-    return this.http.get<any[]>(this.jsonUrl);
+  getAllConsoles(): Observable<ConsoleModel[]> {
+    return this.http.get<ConsoleModel[]>(environment.consolesJsonUrl);
   }
 
-  getGamesForPlatform(platform: string): Observable<any> {
-    const platformId = platform === 'ds' ? 9 : 8;
-    return this.http.get(`${this.rawgBaseUrl}/games?key=${this.rawgApiKey}&platforms=${platformId}&ordering=-metacritic&page_size=10&metacritic=70,100`);
+  getGamesForPlatform(platform: Platform): Observable<RawgResponse> {
+    const platformId = platform === 'ds' ? this.DS_PLATFORM_ID : this.THREEDS_PLATFORM_ID;
+    const url = `${environment.rawgBaseUrl}/games`
+      + `?key=${environment.rawgApiKey}`
+      + `&platforms=${platformId}`
+      + `&ordering=-metacritic`
+      + `&page_size=10`
+      + `&metacritic=70,100`;
+    return this.http.get<RawgResponse>(url);
   }
-
-  getConsoleImage(wikiTitle: string): Observable<any> {
-  const query = encodeURIComponent(wikiTitle);
-  return this.http.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${query}`);
-}
-
 }
